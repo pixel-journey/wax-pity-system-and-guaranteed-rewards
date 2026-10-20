@@ -1,0 +1,27 @@
+name: wax-pity-system-and-guaranteed-rewards
+trust_label: educational-reference
+version: 0.1.0
+purpose: >
+  Soft-pity and hard-guarantee arithmetic for a drop designer.
+  No pack is opened and no endpoint is called.
+invariants:
+  - Before softStart misses, the rate equals baseRate.
+  - At softStart misses, the rate is min(cap, baseRate + step).
+  - At hardGuaranteeAt misses, the rate is 1 and the roll is forced.
+  - A policy with every pre-guarantee rate at 0 takes hardGuaranteeAt + 1 attempts.
+  - plainLanguage says the page does not open a pack.
+  - examples/pity.ts performs no network or wallet calls.
+do_not:
+  - Do not describe the seeded demo as a provably fair draw.
+  - Do not round inside rateAfterMisses.
+  - Do not add AtomicAssets or WharfKit to examples/pity.ts.
+entrypoints:
+  logic: examples/pity.ts
+  tests: examples/pity.test.ts
+  demo: examples/Demo.tsx
+commands:
+  test: npm test
+  demo: npm run dev
+live_data:
+  status: untested
+  notes: No drop contract is read.
