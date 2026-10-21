@@ -10,15 +10,15 @@ invariants:
   - At hardGuaranteeAt misses, the rate is 1 and the roll is forced.
   - A policy with every pre-guarantee rate at 0 takes hardGuaranteeAt + 1 attempts.
   - plainLanguage says the page does not open a pack.
-  - examples/pity.ts performs no network or wallet calls.
+  - src/pity.ts performs no network or wallet calls.
 do_not:
   - Do not describe the seeded demo as a provably fair draw.
   - Do not round inside rateAfterMisses.
-  - Do not add AtomicAssets or WharfKit to examples/pity.ts.
+  - Do not add AtomicAssets or WharfKit to src/pity.ts.
 entrypoints:
-  logic: examples/pity.ts
-  tests: examples/pity.test.ts
-  demo: examples/Demo.tsx
+  logic: src/pity.ts
+  tests: src/pity.test.ts
+  demo: src/Demo.tsx
 commands:
   test: npm test
   demo: npm run dev

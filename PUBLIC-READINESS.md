@@ -10,7 +10,7 @@ Checked 2026-10-20. Stays private.
 
 ## Gate 1
 
-- [x] spec.yaml, ARCHITECTURE.md, pure `examples/pity.ts`, unit tests
+- [x] spec.yaml, ARCHITECTURE.md, pure `src/pity.ts`, unit tests
 - [x] Anti-patterns, edge cases, portability, offline demo
 - [x] Related blueprints
 

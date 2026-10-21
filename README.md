@@ -17,9 +17,9 @@ It does not open an Atomic pack. It does not call AtomicAssets. A website that s
 
 | Piece | Role |
 | --- | --- |
-| `examples/pity.ts` | Pure policy, rates, exact expectation, seeded rolls |
-| `examples/pity.test.ts` | The claims in the verification log |
-| `examples/Demo.tsx` | Offline form. Same seed, same summary |
+| `src/pity.ts` | Pure policy, rates, exact expectation, seeded rolls |
+| `src/pity.test.ts` | The claims in the verification log |
+| `src/Demo.tsx` | Offline form. Same seed, same summary |
 
 `npm test` runs the math. `npm run dev` opens the form. No wallet, no API key.
 
@@ -35,7 +35,7 @@ The sample policy is 5% until 10 misses, then +2 points per extra miss, capped a
 
 ## Use it somewhere else
 
-Copy `examples/pity.ts`. Keep the policy next to the copy you show players. If the contract uses a different curve, do not import this function and pretend it describes that contract.
+Copy `src/pity.ts`. Keep the policy next to the copy you show players. If the contract uses a different curve, do not import this function and pretend it describes that contract.
 
 A contract draw has to use the same inputs: the miss counter that the contract itself stores, not a counter in the browser. Client-side pity that the server can ignore is an anti-pattern. So is a published "5%" that omits the step and the guarantee.
 
@@ -61,7 +61,7 @@ The math is not WAX-specific. WAX-shaped drops usually live in a contract action
 ## Live path, not shipped
 
 ```
-contract miss counter + published policy --> same function as examples/pity.ts --> player-facing sentence
+contract miss counter + published policy --> same function as src/pity.ts --> player-facing sentence
 ```
 
 Until that equality is tested against a real action, the trust label stays `educational-reference`.
@@ -70,6 +70,13 @@ Until that equality is tested against a real action, the trust label stays `educ
 
 - [wax-drops-and-pack-opening-experience](https://github.com/pixel-journey/wax-drops-and-pack-opening-experience) — reveal UX, separate from this math
 - [wax-advanced-drop-mechanics-toolkit](https://github.com/pixel-journey/wax-advanced-drop-mechanics-toolkit) — still a README as of this pass; do not treat it as an implementation
+
+
+## Queries and unsigned transactions
+
+`src/api.ts` builds the HTTP requests. `src/usecases.ts` is the worked case for this repo: those requests, and the unsigned transaction when the feature actually has an action. `executed` is false. Nothing is sent.
+
+The engines used to sit in `examples/`. GitHub treats that directory as documentation, so the language bar showed the stylesheet and almost none of the TypeScript.
 
 ## Run
 
