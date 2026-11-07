@@ -69,7 +69,7 @@ Until that equality is tested against a real action, the trust label stays `educ
 ## Related
 
 - [wax-drops-and-pack-opening-experience](https://github.com/pixel-journey/wax-drops-and-pack-opening-experience) — reveal UX, separate from this math
-- [wax-advanced-drop-mechanics-toolkit](https://github.com/pixel-journey/wax-advanced-drop-mechanics-toolkit) — still a README as of this pass; do not treat it as an implementation
+- [wax-advanced-drop-mechanics-toolkit](https://github.com/pixel-journey/wax-advanced-drop-mechanics-toolkit) — a different curve. `calculatePityChance` rises from attempt 0 and `hardPityAt: 0` returns `1`. `applyPityBonus` adds the bonus to every tier and does not renormalize. Do not import that file and call it this policy.
 
 
 ## Queries and unsigned transactions
