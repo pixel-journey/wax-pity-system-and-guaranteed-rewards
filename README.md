@@ -1,7 +1,8 @@
 # Pity rates and a hard guarantee
 
 **Trust label:** `educational-reference`  
-**Catalog:** [wax-ecosystem-blueprint-catalog](https://github.com/pixel-journey/wax-ecosystem-blueprint-catalog)
+**Catalog:** [wax-ecosystem-blueprint-catalog](https://github.com/pixel-journey/wax-ecosystem-blueprint-catalog)  
+**Source-backed walkthrough:** [EDUCATION.md](EDUCATION.md)
 
 A drop that says "5%" and then quietly changes the odds is a trust problem, not a UI problem. This repo is the arithmetic a designer can publish before anyone writes a contract: base rate, soft pity, a cap, and a hard guarantee.
 
@@ -12,6 +13,7 @@ It does not open an Atomic pack. It does not call AtomicAssets. A website that s
 - How a miss streak changes the chance of the next attempt.
 - Why "expected attempts" is a finite number only because the guarantee forces a hit.
 - What to tell a player in one paragraph, including the sentence that this page did not open a pack.
+- The exact rate table and the attack / mistake cases that the pure functions refuse (see EDUCATION.md).
 
 ## What is actually in the repo
 
@@ -20,6 +22,7 @@ It does not open an Atomic pack. It does not call AtomicAssets. A website that s
 | `src/pity.ts` | Pure policy, rates, exact expectation, seeded rolls |
 | `src/pity.test.ts` | The claims in the verification log |
 | `src/Demo.tsx` | Offline form. Same seed, same summary |
+| `EDUCATION.md` | Predict-run table, attack table, official source links, interlinks |
 
 `npm test` runs the math. `npm run dev` opens the form. No wallet, no API key.
 
@@ -32,6 +35,8 @@ It does not open an Atomic pack. It does not call AtomicAssets. A website that s
 3. Otherwise the rate is `baseRate + (misses - softStart + 1) * step`, and it does not pass `cap`.
 
 The sample policy is 5% until 10 misses, then +2 points per extra miss, capped at 25%, forced after 40 misses.
+
+Full predict-run and attack tables: [EDUCATION.md](EDUCATION.md).
 
 ## Use it somewhere else
 
@@ -68,9 +73,9 @@ Until that equality is tested against a real action, the trust label stays `educ
 
 ## Related
 
-- [wax-drops-and-pack-opening-experience](https://github.com/pixel-journey/wax-drops-and-pack-opening-experience) — reveal UX, separate from this math
+- [wax-drops-and-pack-opening-experience](https://github.com/pixel-journey/wax-drops-and-pack-opening-experience) — reveal UX and exact AtomicPacks refusal strings, separate from this math
 - [wax-advanced-drop-mechanics-toolkit](https://github.com/pixel-journey/wax-advanced-drop-mechanics-toolkit) — a different curve. `calculatePityChance` rises from attempt 0 and `hardPityAt: 0` returns `1`. `applyPityBonus` adds the bonus to every tier and does not renormalize. Do not import that file and call it this policy.
-
+- Official pack source: [pinknetworkx/atomicpacks-contract](https://github.com/pinknetworkx/atomicpacks-contract)
 
 ## Queries and unsigned transactions
 
