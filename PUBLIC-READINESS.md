@@ -2,6 +2,8 @@
 
 Checked 2026-11-13. EDUCATION.md added with predict-run, attack tables, and official interlinks. Honesty labels intact. Ready for public.
 
+Flipped public 2026-11-20 after `npm test` (13 passed). The AtomicAssets release link points at `atomicassets/atomicassets-contract` v2.0.0, not the archived pink.network wiki.
+
 ## Gate 0
 
 - [x] README, trust label, package scripts, strict tsconfig, gitignore, MIT, CI

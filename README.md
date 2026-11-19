@@ -1,7 +1,7 @@
 # Pity rates and a hard guarantee
 
 **Trust label:** `educational-reference`  
-**Catalog:** [wax-ecosystem-blueprint-catalog](https://github.com/pixel-journey/wax-ecosystem-blueprint-catalog)  
+**Catalog:** `wax-ecosystem-blueprint-catalog` (private; not this public course)  
 **Source-backed walkthrough:** [EDUCATION.md](EDUCATION.md)
 
 A drop that says "5%" and then quietly changes the odds is a trust problem, not a UI problem. This repo is the arithmetic a designer can publish before anyone writes a contract: base rate, soft pity, a cap, and a hard guarantee.

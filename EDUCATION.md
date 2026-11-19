@@ -5,7 +5,7 @@
 **Official sources:**  
 - [docs.wax.io How-To AtomicAssets](https://docs.wax.io/build/tutorials/howto_atomicassets)  
 - [pinknetworkx/atomicpacks-contract](https://github.com/pinknetworkx/atomicpacks-contract) (fixed odds per roll; no built-in soft/hard pity counter)  
-- [AtomicAssets v2.0.0 release notes](https://github.com/pinknetworkx/atomicassets-contract/releases) (backing deprecated, template flags, etc.)
+- [atomicassets-contract v2.0.0](https://github.com/atomicassets/atomicassets-contract/releases/tag/v2.0.0) (the live contract line; the pink.network wiki still describes v1)
 
 This file exists so a designer, creator, or AI vibe-coder can predict the exact rate a published policy produces, and so a developer knows the contract must store the miss counter itself.
 
